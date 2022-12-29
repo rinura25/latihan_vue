@@ -25,7 +25,9 @@ nav a.router-link-exact-active {
   <nav>
     <router-link to="/">Home</router-link> | 
     <router-link to="/dokter">Dokter</router-link> | 
-    <router-link to="/pasien">Pasien</router-link>
+    <router-link to="/pasien">Pasien</router-link> | 
+    <router-link to="/formpasien">Form Pasien</router-link> | 
+    <router-link to="/alamat">Alamat</router-link>
   </nav>
   <router-view/>
 </template>

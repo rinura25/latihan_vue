@@ -1,16 +1,32 @@
 <template>
   <div class="home">
-    <h1>Home Page</h1>
+    <button v-on:click="generateToken">Generate Token</button>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-
+import axios from 'axios';
 
 export default {
-  name: 'HomeView',
-  components: {
-  }
+    data() {
+        return {
+            token: ""
+        };
+    },
+    methods: {
+        async generateToken() {
+            try {
+                const name = "ALAWI";
+                const email = "alawi@gmail.com";
+                const password = "12345678";
+                const response = await axios.post("http://127.0.0.1:8000/api/login", { name, email, password });
+                this.token = response.data.token;
+                console.log(this.token);
+            }
+            catch (error) {
+                console.error(error);
+            }
+        }
+    },
 }
 </script>
